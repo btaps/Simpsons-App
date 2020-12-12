@@ -1,0 +1,36 @@
+@font-face{
+  font-family: 'The Simpsons';
+  src: url("./fonts/Simpsonfont-Font.otf");
+  font-weight: normal;
+}
+
+$simpsons-font: 'The Simpsons', Arial, sans-serif;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+$txt-primary: #7ea3bd;
+$txt-secondary: #c3d9e8;
+
+$txt-small: 1rem;
+$txt-medium: 1.7rem;
+$txt-big: 2.5rem;
+
+$light: 300;
+$normal: 400;
+$semibold: 500;
+$bold: 700;
+
+$yellow: #ffc107;
+$yellow-hover: #e0a800;
+$white: #FFFF;
+$black: #000;
+$background: #050526;
+
+
+$fast: all 0.3s ease-in-out 0s;
+$medium: all 1s ease-in-out 0s;
+$slow: all 2s ease-in-out 0s;
+$slower: all 2.5s ease-in-out 0s;

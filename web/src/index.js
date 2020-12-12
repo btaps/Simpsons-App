@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import App from "./setup/App";
-import reportWebVitals from "./reportWebVitals";
+import reportWebVitals from "./setup/reportWebVitals";
 
 // Redux
 //import { Provider } from "react-redux";
