@@ -7,28 +7,23 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      firstName: {
+      first_name: {
         type: Sequelize.STRING,
       },
-      lastNameID: {
+      last_name_id: {
         type: Sequelize.INTEGER,
       },
-      occupationID: {
+      occupation_id: {
         type: Sequelize.INTEGER,
       },
-      catchPhrase: {
+      voice_actor_id: {
+        type: Sequelize.INTEGER,
+      },
+      catch_phrase: {
         type: Sequelize.TEXT,
       },
-      ageRange: {
+      age_range: {
         type: Sequelize.STRING,
-      },
-      createdAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
-      },
-      updatedAt: {
-        allowNull: false,
-        type: Sequelize.DATE,
       },
     });
   },
