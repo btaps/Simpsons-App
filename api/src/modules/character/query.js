@@ -3,7 +3,7 @@ import { GraphQLInt, GraphQLString, GraphQLList } from "graphql";
 
 // App Imports
 import CharacterType from "./types";
-import { getAll, getById } from "./resolvers";
+import { getAll, getByName } from "./resolvers";
 
 // Characters All
 export const characterAll = {
@@ -12,11 +12,11 @@ export const characterAll = {
 };
 
 // Character By ID
-export const characterById = {
+export const characterByName = {
   type: CharacterType,
   args: {
-    characterId: { type: GraphQLInt },
+    characterName: { type: GraphQLString },
   },
-  resolve: getById,
+  resolve: getByName,
 };
 

@@ -3,10 +3,10 @@ import connection from "../../setup/database";
 
 const models = connection.models;
 
-// Get character by ID
-export async function getById(parentValue, { characterId }) {
+// Get character by Name
+export async function getByName(parentValue, { characterName }) {
   const character = await models.Character.findOne({
-    where: { id: characterId },
+    where: { first_name: characterName },
   });
 
   if (!character) {

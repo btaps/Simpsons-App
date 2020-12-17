@@ -1,14 +1,24 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+//import axios from "axios";
+//import { query, mutation } from "gql-query-builder";
+
+import {
+  loadAllCharacters,
+  loadOneCharacter,
+} from "../../setup/services/characters";
+import { getAll, getByName } from "../../modules/characters/queries";
 import "./Intro.scss";
 
 function Intro() {
+  const dispatch = useDispatch();
   const [showSearch, setShowSearch] = useState(false);
 
   setTimeout(() => {
     let leftClouds = document.getElementsByClassName("left");
     let rightClouds = document.getElementsByClassName("right");
     let text = document.getElementsByClassName("the-simpsons");
-    let lastScroll = 0;
+    //let lastScroll = 0;
 
     for (let i = 0; i < leftClouds.length; i++) {
       let cloud = leftClouds[i];
@@ -83,7 +93,13 @@ function Intro() {
         ></input>
         <button
           className={showSearch ? "intro-button move" : "intro-button"}
-          onClick={() => setShowSearch(true)}
+          onClick={() => {
+            if (showSearch) {
+              dispatch(loadAllCharacters(getAll()));
+              dispatch(loadOneCharacter(getByName("Homer")));
+            }
+            setShowSearch(true);
+          }}
         >
           Search
         </button>

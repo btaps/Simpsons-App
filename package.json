@@ -1,0 +1,29 @@
+{
+  "name": "code",
+  "version": "1.0.0",
+  "description": "code root",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm run setup:local && npm run setup:all",
+    "setup:local": "npm install",
+    "setup:all": "concurrently 'npm run setup:web' 'npm run setup:api' --names 'web,api'",
+    "setup:web": "npm run setup --prefix web",
+    "setup:api": "npm run setup --prefix api",
+    "start": "concurrently 'npm run start:web' 'npm run start:api' --kill-others --names 'web,api'",
+    "start:web": "npm run start --prefix web",
+    "start:api": "npm run start --prefix api"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/btaps/Simpsons-App.git"
+  },
+  "author": "Bruno Tapia Sierra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/btaps/Simpsons-App/issues"
+  },
+  "homepage": "https://github.com/btaps/Simpsons-App#readme",
+  "dependencies": {
+    "concurrently": "^5.3.0"
+  }
+}

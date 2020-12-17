@@ -2,7 +2,7 @@
 #### By: Bruno Tapia Sierra
 
 - **API** built with Node, GraphQL, Express, and Sequelize (MySQL)
-- **WebApp** built with React and Redux
+- **Web** built with React and Redux
 - Written in ES6+ using Babel
 
 ## About
