@@ -1,6 +1,4 @@
-"use strict";
-
-module.exports = function (sequelize, DataTypes) {
+export default function createCharacters(sequelize, DataTypes) {
   let Character = sequelize.define("character", {
     first_name: { type: DataTypes.STRING },
     last_name_id: { type: DataTypes.INTEGER },
@@ -11,8 +9,10 @@ module.exports = function (sequelize, DataTypes) {
   });
 
   //Character.associate = function (models) {
-  //Character.hasMany(models.Subscription);
+  //Character.belongsTo(models.LastName, {
+  //foreignKey: "last_name_id",
+  //});
   //};
 
   return Character;
-};
+}

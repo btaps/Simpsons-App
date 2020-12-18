@@ -1,12 +1,11 @@
 // App Imports
-import connection from "../../setup/database";
-
-const models = connection.models;
+import models from "../../setup/models";
 
 // Get character by Name
 export async function getByName(parentValue, { characterName }) {
   const character = await models.Character.findOne({
     where: { first_name: characterName },
+    //include: models.LastName,
   });
 
   if (!character) {
@@ -21,6 +20,7 @@ export async function getByName(parentValue, { characterName }) {
 
 // Get all characters
 export async function getAll(parentValue) {
+  //return await models.Character.findAll({ include: models.LastName });
   return await models.Character.findAll();
 }
 

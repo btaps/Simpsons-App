@@ -3,7 +3,7 @@ import { GraphQLObjectType, GraphQLString, GraphQLInt } from "graphql";
 
 // Crate type
 const CharacterType = new GraphQLObjectType({
-  name: "character",
+  name: "characters",
   description: "Character Type",
 
   fields: () => ({

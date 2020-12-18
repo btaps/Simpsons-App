@@ -22,23 +22,6 @@ const connection = new Sequelize(
     },
   }
 );
-const Character = connection.define(
-  "Character",
-  {
-    // Model attributes are defined here
-    first_name: { type: DataTypes.STRING },
-    last_name_id: { type: DataTypes.INTEGER },
-    occupation_id: { type: DataTypes.INTEGER },
-    voice_actor_id: { type: DataTypes.INTEGER },
-    catch_phrase: { type: DataTypes.STRING },
-    age_range: { type: DataTypes.STRING },
-  },
-  {
-    // Other model options go here
-  }
-);
-
-//console.log(connection.models.Character.findAll);
 
 // Test connection
 console.info("SETUP - Connecting database...");

@@ -1,22 +1,22 @@
 // Imports
-import { GraphQLInt, GraphQLString, GraphQLList } from "graphql";
+import { GraphQLString, GraphQLList } from "graphql";
 
 // App Imports
 import CharacterType from "./types";
 import { getAll, getByName } from "./resolvers";
 
-// Characters All
-export const characterAll = {
-  type: new GraphQLList(CharacterType),
-  resolve: getAll,
-};
-
 // Character By ID
-export const characterByName = {
+export const getCharacterByName = {
   type: CharacterType,
   args: {
     characterName: { type: GraphQLString },
   },
   resolve: getByName,
+};
+
+// Characters All
+export const getAllCharacters = {
+  type: new GraphQLList(CharacterType),
+  resolve: getAll,
 };
 

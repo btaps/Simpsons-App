@@ -16,7 +16,7 @@ export const loadAllCharacters = (query) => async (dispatch) => {
     const { data } = await axios
       .post(APP_URL_API, query)
       .then((response) => response.data);
-    dispatch(setAllCharacters(data.characterAll));
+    dispatch(setAllCharacters(data.getAllCharacters));
   } catch (err) {
     console.log(err);
   }
@@ -28,7 +28,7 @@ export const loadOneCharacter = (query) => async (dispatch) => {
     const { data } = await axios
       .post(APP_URL_API, query)
       .then((response) => response.data);
-    dispatch(setOneCharacter(data.characterByName));
+    dispatch(setOneCharacter(data.getCharacterByName));
   } catch (err) {
     console.log(err);
   }

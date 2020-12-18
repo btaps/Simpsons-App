@@ -3,14 +3,13 @@ import { useDispatch } from "react-redux";
 //import axios from "axios";
 //import { query, mutation } from "gql-query-builder";
 
-import {
-  loadAllCharacters,
-  loadOneCharacter,
-} from "../../setup/services/characters";
-import { getAll, getByName } from "../../modules/characters/queries";
+import { loadOneCharacter } from "../../setup/services/characters";
+import { getCharacterByName } from "../../modules/characters/queries";
+import { getLastNameById } from "../../modules/last-names/queries";
+
 import "./Intro.scss";
 
-function renderSearchBar(
+function renderSearch(
   _showSearch,
   _searchText,
   _updateSearchText,
@@ -30,8 +29,8 @@ function renderSearchBar(
         className={_showSearch ? "intro-button move" : "intro-button"}
         onClick={() => {
           if (_showSearch) {
-            _dispatch(loadAllCharacters(getAll()));
-            _dispatch(loadOneCharacter(getByName(_searchText)));
+            //_dispatch(loadAllCharacters(getAll()));
+            _dispatch(loadOneCharacter(getCharacterByName(_searchText)));
           }
           _setShowSearch(true);
         }}
@@ -115,7 +114,7 @@ function Intro() {
   setTimeout(() => {
     let leftClouds = document.getElementsByClassName("left");
     let rightClouds = document.getElementsByClassName("right");
-    let text = document.getElementsByClassName("the-simpsons");
+    let simpsonsText = document.getElementsByClassName("the-simpsons");
 
     for (let i = 0; i < leftClouds.length; i++) {
       let cloud = leftClouds[i];
@@ -126,8 +125,8 @@ function Intro() {
       cloud.classList.add("to-right");
     }
 
-    for (let i = 0; i < text.length; i++) {
-      let introText = text[i];
+    for (let i = 0; i < simpsonsText.length; i++) {
+      let introText = simpsonsText[i];
       introText.classList.add("zoom");
     }
   }, [300]);
@@ -140,7 +139,7 @@ function Intro() {
         {renderSimpsonsIntro()}
       </section>
       <section className="below flex center">
-        {renderSearchBar(
+        {renderSearch(
           showSearch,
           searchText,
           updateSearchText,

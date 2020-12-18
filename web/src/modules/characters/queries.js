@@ -1,9 +1,9 @@
 // Imports
 import { query, mutation } from "gql-query-builder";
 
-export function getAll() {
+export function getAllCharacters() {
   return query({
-    operation: "characterAll",
+    operation: "getAllCharacters",
     fields: [
       "first_name",
       "last_name_id",
@@ -15,9 +15,9 @@ export function getAll() {
   });
 }
 
-export function getByName(name) {
+export function getCharacterByName(name) {
   return query({
-    operation: "characterByName",
+    operation: "getCharacterByName",
     variables: { characterName: name },
     fields: [
       "first_name",
