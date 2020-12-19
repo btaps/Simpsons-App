@@ -1,0 +1,17 @@
+@import "../../setup/utilities/variables.scss";
+
+.character-container{
+  font-family: $source-sans-font;
+  margin: 1rem;
+  font-size: $txt-medium;
+}
+
+.cc__info{
+  font-family: $simpsons-font;
+  font-size: $txt-small;
+  color: $yellow; 
+}
+
+.cc__row{
+  padding-right: .5rem;
+}

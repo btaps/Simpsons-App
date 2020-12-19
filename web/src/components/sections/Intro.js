@@ -1,13 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-//import axios from "axios";
-//import { query, mutation } from "gql-query-builder";
 
 import { loadOneCharacter } from "../../setup/services/characters";
 import { getCharacterByName } from "../../modules/characters/queries";
-import { getLastNameById } from "../../modules/last-names/queries";
 
 import "./Intro.scss";
+
+function renderRandom() {
+  return (
+    <React.Fragment>
+      <button className="intro-button" onClick={() => {}}>
+        Get Random
+      </button>
+    </React.Fragment>
+  );
+}
 
 function renderSearch(
   _showSearch,
@@ -26,6 +33,7 @@ function renderSearch(
         onChange={_updateSearchText}
       ></input>
       <button
+        type="button"
         className={_showSearch ? "intro-button move" : "intro-button"}
         onClick={() => {
           if (_showSearch) {
@@ -58,44 +66,44 @@ function renderClouds() {
     <React.Fragment>
       <div className="clouds top">
         <div className="cloud-one left">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-two left">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-three right">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
       </div>
       <div className="clouds middle">
         <div className="cloud-four left">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-five right">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
       </div>
       <div className="clouds bottom">
         <div className="cloud-six right">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-seven left">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-eight right">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
         <div className="cloud-nine left">
-          <span className="bubble-one"></span>
-          <span className="bubble-two"></span>
+          <span className="bubble-one cloud"></span>
+          <span className="bubble-two cloud"></span>
         </div>
       </div>
     </React.Fragment>

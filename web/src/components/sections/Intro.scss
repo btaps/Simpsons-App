@@ -283,7 +283,7 @@
   width: 95%;
 }
 
-span {
+.cloud {
   position: absolute;
   background: #fafbf0;
   border-radius: 100%;
@@ -367,9 +367,9 @@ span {
   caret-color: $white;
   min-width: 15rem;
   color: $white;
-  font-family: $simpsons-font;
+  font-family: $source-sans-font;
   min-height: 2rem;
-  font-size: 1rem;
+  font-size: $txt-medium;
 }
 
 .hide{

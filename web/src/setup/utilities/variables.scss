@@ -4,7 +4,14 @@
   font-weight: normal;
 }
 
+@font-face{
+  font-family: 'Source Sans Pro';
+  src: url("./fonts/SourceSansPro-Regular.ttf");
+  font-weight: normal;
+}
+
 $simpsons-font: 'The Simpsons', Arial, sans-serif;
+$source-sans-font: 'Source Sans Pro', Arial, sans-serif;
 
 $light: 300;
 $normal: 400;
@@ -15,8 +22,8 @@ $txt-primary: #7ea3bd;
 $txt-secondary: #c3d9e8;
 
 $txt-small: 1rem;
-$txt-medium: 1.7rem;
-$txt-big: 2.5rem;
+$txt-medium: 1.3rem;
+$txt-big: 1.7rem;
 
 $light: 300;
 $normal: 400;
