@@ -1,0 +1,20 @@
+@import "../../setup/utilities/variables.scss";
+
+.error-message-container{
+  transition: $slow;
+  position: fixed;
+  top: -10rem;
+  left: 35%;
+  z-index: 100;
+  min-height: 10rem;
+  min-width: 30rem;
+  background-color: black;
+  font-family: $source-sans-font;
+  font-size: $txt-medium;
+  color: $white;
+  border-radius: 5px;
+}
+
+.emc__show{
+  top: 2rem;
+}

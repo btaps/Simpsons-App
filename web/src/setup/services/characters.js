@@ -9,6 +9,7 @@ import {
   setOneCharacter,
   setAllCharacters,
 } from "../store/characters";
+import { setShowError, setErrorMessage } from "../store/errors";
 
 export const loadAllCharacters = (query) => async (dispatch) => {
   try {
@@ -18,18 +19,27 @@ export const loadAllCharacters = (query) => async (dispatch) => {
       .then((response) => response.data);
     dispatch(setAllCharacters(data.getAllCharacters));
   } catch (err) {
+    dispatch(setShowError(true));
+    dispatch(setErrorMessage("Error loading all characters"));
     console.log(err);
   }
 };
 
 export const loadOneCharacter = (query) => async (dispatch) => {
   try {
-    dispatch(setShowOne(true));
     const { data } = await axios
       .post(APP_URL_API, query)
       .then((response) => response.data);
-    dispatch(setOneCharacter(data.getCharacterByName));
+    if (data.getCharacterByName === null) {
+      dispatch(setShowError(true));
+      dispatch(setErrorMessage("No character found with that name"));
+    } else {
+      dispatch(setShowOne(true));
+      dispatch(setOneCharacter(data.getCharacterByName));
+    }
   } catch (err) {
+    dispatch(setShowError(true));
+    dispatch(setErrorMessage("Error loading character"));
     console.log(err);
   }
 };
@@ -46,6 +56,8 @@ export const loadLastName = (query, initialState) => async (dispatch) => {
       })
     );
   } catch (err) {
+    dispatch(setShowError(true));
+    dispatch(setErrorMessage("Error loading last name with that id"));
     console.log(err);
   }
 };
@@ -62,6 +74,8 @@ export const loadOccupation = (query, initialState) => async (dispatch) => {
       })
     );
   } catch (err) {
+    dispatch(setShowError(true));
+    dispatch(setErrorMessage("Error loading occupation with that id"));
     console.log(err);
   }
 };
@@ -79,6 +93,8 @@ export const loadVoiceActor = (query, initialState) => async (dispatch) => {
       })
     );
   } catch (err) {
+    dispatch(setShowError(true));
+    dispatch(setErrorMessage("Error loading voice actor with that id"));
     console.log(err);
   }
 };
