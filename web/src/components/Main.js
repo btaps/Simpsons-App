@@ -29,14 +29,16 @@ function Main() {
   useEffect(() => {
     // expand height per selection
     const characterDiv = document.getElementsByClassName("mc--expand")[0];
-    if (showAll) {
+    if (error.showError) {
+      window.scrollTo(0, 0);
+      setTimeout(() => (characterDiv.style.height = "0"), 500);
+    } else if (showAll) {
       characterDiv.style.height = "9858.35px";
     } else if (showOneCharacter || showRandom) {
       characterDiv.style.height = "535.15px";
     } else if (oneCharacter === undefined) {
-      characterDiv.style.height = "0";
     }
-  }, [showOneCharacter, showRandom, showAll, oneCharacter]);
+  }, [showOneCharacter, showRandom, showAll, oneCharacter, error]);
 
   return (
     <div className="main-container">
