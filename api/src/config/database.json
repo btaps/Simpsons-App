@@ -8,10 +8,10 @@
     "seederStorage": "sequelize"
   },
   "production": {
-    "username": "root",
-    "password": "Tksp1991!",
-    "database": "simpsons_api",
-    "host": "127.0.0.1",
+    "username": "b55fa8441fc8b0",
+    "password": "8edcc288",
+    "database": "heroku_a4462ce9a336439",
+    "host": "us-cdbr-east-02.cleardb.com",
     "dialect": "mysql",
     "seederStorage": "sequelize"
   }

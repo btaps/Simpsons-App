@@ -16,12 +16,6 @@ export default function (server) {
       schema,
       graphiql: serverConfig.graphql.ide,
       pretty: serverConfig.graphql.pretty,
-      context: {
-        auth: {
-          user: request.user,
-          isAuthenticated: request.user && request.user.id > 0,
-        },
-      },
     }))
   );
 }
