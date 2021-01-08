@@ -15,7 +15,7 @@ import {
   setShowAll,
   setShowRandom,
 } from "../../setup/store/characters";
-
+import { errorMessage } from "../../setup/services/errors";
 import "./Intro.scss";
 
 function renderAllCharacters(
@@ -23,7 +23,8 @@ function renderAllCharacters(
   _showOne,
   _showRandom,
   _showSearch,
-  _setShowSearch
+  _setShowSearch,
+  _allCharacters
 ) {
   return (
     <React.Fragment>
@@ -33,7 +34,11 @@ function renderAllCharacters(
           if (_showOne) _dispatch(setShowOne(false));
           if (_showRandom) _dispatch(setShowRandom(false));
           if (_showSearch) _setShowSearch(false);
-          _dispatch(setShowAll(true));
+          if (Object.keys(_allCharacters).length > 0) {
+            _dispatch(setShowAll(true));
+          } else {
+            _dispatch(errorMessage("Error loading all characters"));
+          }
         }}
       >
         All Characters
@@ -58,11 +63,15 @@ function renderRandom(
           if (_showOne) _dispatch(setShowOne(false));
           if (_showAll) _dispatch(setShowAll(false));
           if (_showSearch) _setShowSearch(false);
-          const totalCharacters = _allCharacters.length;
-          const randomIndex = Math.floor(Math.random() * totalCharacters);
-          const randomCharacter = _allCharacters[randomIndex];
+          if (Object.keys(_allCharacters).length > 0) {
+            const totalCharacters = _allCharacters.length;
+            const randomIndex = Math.floor(Math.random() * totalCharacters);
+            const randomCharacter = _allCharacters[randomIndex];
 
-          _dispatch(loadRandomCharacter(randomCharacter));
+            _dispatch(loadRandomCharacter(randomCharacter));
+          } else {
+            _dispatch(errorMessage("Error loading random character"));
+          }
         }}
       >
         Random
@@ -190,7 +199,7 @@ function Intro() {
   };
 
   useEffect(() => {
-    if (Object.keys(allCharacters).length === 0)
+    if (Object.keys(allCharacters).length === 0 && !showSearch)
       dispatch(loadAllCharacters(getAllCharacters()));
 
     const searchButton = document.getElementById("intro-button");
@@ -263,7 +272,8 @@ function Intro() {
             showOne,
             showRandom,
             showSearch,
-            setShowSearch
+            setShowSearch,
+            allCharacters
           )}
         </div>
       </section>
