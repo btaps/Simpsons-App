@@ -3,18 +3,34 @@
 .error-message-container{
   transition: $slow;
   position: fixed;
-  top: -10rem;
-  left: 35%;
+  top: -12rem;
+  width: 100%;
   z-index: 100;
-  min-height: 10rem;
-  min-width: 30rem;
-  background-color: black;
   font-family: $source-sans-font;
   font-size: $txt-medium;
-  color: $white;
-  border-radius: 5px;
+  color: $black;
 }
 
 .emc__show{
   top: 2rem;
+}
+
+.emc__div{
+  padding: 1rem;
+  background-color: $yellow-hover;
+  border-radius: 7px;
+  border: 3px solid;
+}
+
+.emc__img{
+  width: 6rem;
+  padding-left: 1rem;
+}
+
+.emc__img-div{
+  width: 25%;
+}
+
+.emc__message-div{
+  width: 75%;
 }

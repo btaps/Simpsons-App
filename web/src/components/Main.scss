@@ -3,4 +3,18 @@
 .main-container{
   font-family: $simpsons-font;
   color: $white;
+  height: 20rem;
 }
+
+.mc--move{
+  position: absolute;
+  top: 0;
+  width: 10rem;
+  hieght: 10rem;
+  background: white;
+}
+
+.mc-expand{
+  transition: $slow;
+}
+

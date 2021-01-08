@@ -1,9 +1,10 @@
 @import "../../setup/utilities/variables.scss";
 
-.character-container{
+.cc__character{
   font-family: $source-sans-font;
   margin: 1rem;
   font-size: $txt-medium;
+  flex-basis: 30%;
 }
 
 .cc__info{
@@ -15,3 +16,5 @@
 .cc__row{
   padding-right: .5rem;
 }
+
+

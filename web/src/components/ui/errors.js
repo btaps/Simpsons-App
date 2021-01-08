@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { setShowError } from "../../setup/store/errors";
+import errorImage from "./error_image.png";
 import "./errors.scss";
 
 function ErrorMessage({ message, show }) {
@@ -26,7 +27,12 @@ function ErrorMessage({ message, show }) {
       }
       id="error"
     >
-      <div>{message}</div>
+      <div className="flex emc__div">
+        <div className="flex center emc__message-div">{message}</div>
+        <div className="flex emc__img-div">
+          <img className="emc__img" src={errorImage} alt="error homer" />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,7 +1,9 @@
+html,
 body{
   margin: 0;
   padding: 0;
   background-color: #333;
+  scroll-behavior: smooth;
 }
 
 .flex{
@@ -31,8 +33,20 @@ body{
 }
 
 .column{
-  -webkit-flex-flow: column;
-  -moz-flex-flow: column;
-  -ms-flex-flow: column;
-  flex-flow: column;
+  -webkit-flex-flow: column wrap;
+  -moz-flex-flow: column wrap;
+  -ms-flex-flow: column wrap;
+  flex-flow: column wrap;
+}
+
+.space-around{
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+  -ms-justify-content: space-around;
+  justify-content: space-around;
+
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
 }

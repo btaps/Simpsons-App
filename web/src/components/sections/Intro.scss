@@ -356,7 +356,7 @@
 }
 
 .intro-search{
-  transition: $slower;
+  transition: $fast;
   position: absolute;
   cursor: default;
   border-radius: 0;
@@ -372,15 +372,19 @@
   font-size: $txt-medium;
 }
 
-.hide{
+.is--hide{
   opacity: 0;
 }
 
-.show{
+.is--show{
   opacity: 1;
   cursor: text;
 }
 
-.move{
+.is--move{
   transform: translate(180px, 0);
+}
+
+.intro--expand{
+  height: 20rem;
 }
