@@ -6,7 +6,7 @@
   "scripts": {
     "create:db": "npx sequelize db:create",
     "setup": "npm run setup:install && npm run create:db && npm run setup:db",
-    "setup:install": "npm install && npm sequelize-cli --help",
+    "setup:install": "npm install && npx sequelize-cli --help",
     "setup:db": "npm run db:migrate && npm run db:seed",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
