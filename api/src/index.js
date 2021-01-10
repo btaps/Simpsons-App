@@ -1,4 +1,5 @@
 import express from "express";
+import regeneratorRuntime from "regenerator-runtime";
 import "dotenv/config";
 
 // Create express server

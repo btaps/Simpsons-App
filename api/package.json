@@ -4,13 +4,18 @@
   "description": "Simpsons Website Backend",
   "main": "src/index.js",
   "scripts": {
-    "create:db": "npx sequelize-cli db:create",
+    "build": "npx babel src --out-dir build --copy-files",
     "setup": "npm run setup:install && npm run create:db && npm run setup:db",
     "setup:install": "npm install",
+    "create:db": "npx sequelize-cli db:create",
     "setup:db": "npm run db:migrate && npm run db:seed",
     "db:migrate": "npx sequelize-cli db:migrate",
     "db:seed": "npx sequelize-cli db:seed:all",
-    "start": "nodemon --exec babel-node src/index.js"
+    "start:dev": "nodemon --exec babel-node src/index.js",
+    "start:prod": "node build/index.js"
+  },
+  "engines": {
+    "node": "12.12.0"
   },
   "author": "Bruno Tapia Sierra",
   "license": "ISC",
@@ -24,9 +29,11 @@
     "jsonwebtoken": "^8.5.1",
     "morgan": "^1.10.0",
     "mysql2": "^2.2.5",
+    "regenerator-runtime": "^0.13.7",
     "sequelize": "^6.3.5"
   },
   "devDependencies": {
+    "@babel/cli": "^7.12.10",
     "@babel/core": "^7.12.10",
     "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.12.10",
