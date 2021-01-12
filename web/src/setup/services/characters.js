@@ -42,13 +42,8 @@ export const loadOneCharacter = (query) => async (dispatch) => {
     const { data } = await axios
       .post(APP_URL_API, query)
       .then((response) => response.data);
-    if (data.getCharacterByName === null) {
-      dispatch(setShowError(true));
-      dispatch(setErrorMessage("No character found with that name"));
-    } else {
-      dispatch(setShowOne(true));
-      dispatch(setOneCharacter(data.getCharacterByName));
-    }
+    dispatch(setShowOne(true));
+    dispatch(setOneCharacter(data.getCharacterByName || {}));
   } catch (err) {
     dispatch(setShowError(true));
     dispatch(setErrorMessage("Error loading character"));

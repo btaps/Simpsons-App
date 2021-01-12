@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import axios from "axios";
+import path from "path";
 
 //App Imports
 //import img from "../../images/Bart.png";
 import { setIsLoading } from "../../setup/store/characters";
-import { APP_URL_API, IMG_URL } from "../../setup/config/env";
+import { APP_URL_API } from "../../setup/config/env";
 import { getLastNameById } from "../../modules/last-names/queries";
 import { getOccupationById } from "../../modules/occupations/queries";
 import { getVoiceActorById } from "../../modules/voice-over-actors/queries";
@@ -19,6 +20,7 @@ function Character({ character }) {
   const [lastName, setLastName] = useState(null);
   const [occupation, setOccupation] = useState(null);
   const [voiceActor, setVoiceActor] = useState(null);
+  const IMG_PATH = path.join(__dirname, "images");
 
   useEffect(() => {
     if (
@@ -68,12 +70,11 @@ function Character({ character }) {
       </div>
     );
   }
-
   return (
     <div className="flex center column cc__character">
       <div className="mc--scroll">
         <img
-          src={`${IMG_URL}${character.first_name}.png`}
+          src={`${IMG_PATH}/${character.first_name}.png`}
           alt="simpson character"
         />
       </div>
