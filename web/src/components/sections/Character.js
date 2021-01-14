@@ -5,8 +5,8 @@ import axios from "axios";
 import path from "path";
 
 //App Imports
-//import img from "../../images/Bart.png";
-import { setIsLoading } from "../../setup/store/characters";
+import { setShowError, setErrorMessage } from "../../setup/store/errors";
+import { setIsLoading, setShowOne } from "../../setup/store/characters";
 import { APP_URL_API } from "../../setup/config/env";
 import { getLastNameById } from "../../modules/last-names/queries";
 import { getOccupationById } from "../../modules/occupations/queries";
@@ -50,6 +50,9 @@ function Character({ character }) {
             )
             .catch((err) => console.log(err));
         } catch (err) {
+          dispatch(setShowOne(false));
+          dispatch(setShowError(true));
+          dispatch(setErrorMessage("Error loading character"));
           console.log(err);
         }
       }
