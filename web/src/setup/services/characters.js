@@ -42,8 +42,13 @@ export const loadOneCharacter = (query) => async (dispatch) => {
     const { data } = await axios
       .post(APP_URL_API, query)
       .then((response) => response.data);
-    dispatch(setShowOne(true));
     dispatch(setOneCharacter(data.getCharacterByName || {}));
+    if (data.getCharacterByName === null) {
+      dispatch(setShowError(true));
+      dispatch(setErrorMessage(data.errors[0].message));
+    } else {
+      dispatch(setShowOne(true));
+    }
   } catch (err) {
     dispatch(setShowError(true));
     dispatch(setErrorMessage("Error loading character"));
