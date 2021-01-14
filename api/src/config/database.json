@@ -1,17 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": "Tksp1991!",
+    "password": "yourPassword",
     "database": "simpsons_api",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "seederStorage": "sequelize"
   },
   "production": {
-    "username": "b55fa8441fc8b0",
-    "password": "8edcc288",
-    "database": "heroku_a4462ce9a336439",
-    "host": "us-cdbr-east-02.cleardb.com",
+    "username": "yourUserName",
+    "password": "yourPassword",
+    "database": "yourDB",
+    "host": "yourHost",
     "dialect": "mysql",
     "seederStorage": "sequelize"
   }
