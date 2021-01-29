@@ -1,5 +1,6 @@
 # The Simpsons Character App
 #### By: Bruno Tapia Sierra
+##### [Click here to visit app](http://simpsons-character-app.xyz/)
 
 - **API** built with Node, GraphQL, Express, and Sequelize (MySQL)
 - **Web** built with React and Redux
